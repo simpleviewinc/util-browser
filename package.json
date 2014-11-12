@@ -1,0 +1,21 @@
+{
+	"name" : "util-browser",
+	"description" : "Node util browserified and wrapped in require UMD to be usable in node and browser environments.",
+	"author" : "Owen Allen <owenallenaz@gmail.com>",
+	"version" : "0.0.1",
+	"devDependencies" : {
+		"browserify" : "*",
+		"uglify-js" : "*",
+		"mocha" : "*"
+	},
+	"engines" : { "node" : ">=0.10.x" },
+	"scripts" : {
+		"compile" : "node ./node_modules/browserify/bin/cmd.js ./raw.js -o ./index.js -s util && ./node_modules/uglify-js/bin/uglifyjs ./index.js -o ./index.min.js",
+		"test" : "mocha --debug $(find testing/ -name *.test.js) -R spec --colors --check-leaks"
+	},
+	"repository" : {
+		"type" : "git",
+		"url" : "https://github.com/simpleviewinc/jsvalidator.git"
+	},
+	"license" : "MIT"
+}
